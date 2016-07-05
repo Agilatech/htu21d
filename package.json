@@ -1,0 +1,25 @@
+{
+  "name": "@agilatech/htu21d",
+  "version": "0.9.0",
+  "description": "Driver for the HTU21D Sensor",
+  "main": "./build/Release/htu21d",
+  "gypfile": true,
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "keywords": [
+    "Sensor",
+    "HTU21D",
+    "Temperature",
+    "Humidity"
+  ],
+  "author": "Scott Erholm <scott@agilatech.com>",
+  "license": "ISC"
+}
