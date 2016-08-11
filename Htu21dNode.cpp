@@ -14,6 +14,7 @@ namespace htu21d {
     using v8::Function;
     using v8::Persistent;
     using v8::Isolate;
+    using v8::Context;
     using v8::Local;
     using v8::Handle;
     using v8::Object;
@@ -153,8 +154,15 @@ namespace htu21d {
         }
         // else invoked as plain function 'Htu21d(...)' -- turn into construct call
         else {
-            Local<Function> constructr = Local<Function>::New(isolate, constructor);
-            args.GetReturnValue().Set(constructr->NewInstance(0, 0));
+            const int argc = 2;
+            Local<Value> argv[argc] = { args[0], args[1] };
+            
+            Local<Function> cons = Local<Function>::New(isolate, constructor);
+            Local<Context> context = isolate->GetCurrentContext();
+            Local<Object> instance =
+            cons->NewInstance(context, argc, argv).ToLocalChecked();
+            args.GetReturnValue().Set(instance);
+
         }
         
         if (!driver) {
