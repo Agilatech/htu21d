@@ -53,6 +53,13 @@ htu21d.valueAtIndex(0, function(err, val) {
 });
 ```
 
+###Operation Notes
+The driver is specific to the HTU21D humidity and temperature sensor manufactured by Measurement Specialties. 
+It will output both relative humidity RH% as well as tempurature in degrees celsius.  The humidity sensor has a 
+3% tolerance accuracy, measuring 0-100% RH. The temperature sensor is accurate to ±0.3°C within the range of 
+5-60°C, degrading to a max of ±1.6°C lower than 0°C and greater than 60°C, measuring -40 to +125 degrees C.
+
+
 ###Dependencies
 * node-gyp
 

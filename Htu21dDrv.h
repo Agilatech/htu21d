@@ -74,7 +74,6 @@ private:
     void reset();
     unsigned char* read3Bytes(uint32_t fromAddress);
     
-    uint32_t i2cBus;
     bool active = false;
     
 };
