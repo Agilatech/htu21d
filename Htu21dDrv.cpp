@@ -33,6 +33,10 @@ std::string Htu21dDrv::getDeviceName() {
     return name;
 }
 
+std::string Htu21dDrv::getDeviceType() {
+    return type;
+}
+
 int Htu21dDrv::getNumValues() {
     return numValues;
 }
@@ -55,6 +59,17 @@ std::string Htu21dDrv::getNameAtIndex(int index) {
 
 bool Htu21dDrv::isActive() {
     return this->active;
+}
+
+std::string Htu21dDrv::getValueByName(std::string name) {
+    
+    for (int i = 0; i < numValues; i++) {
+        if (name == valueNames[i]) {
+            return this->getValueAtIndex(i);
+        }
+    }
+    
+    return "none";
 }
 
 std::string Htu21dDrv::getValueAtIndex(int index) {

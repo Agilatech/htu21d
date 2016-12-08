@@ -41,6 +41,8 @@
 #define HTDU21D_TRIGGER_HUMD_MEASURE_NOHOLD  0xF5
 
 static const std::string name = "HTU21D";
+static const std::string type = "sensor";
+
 static const std::string version = "0.9.0";
 
 static const int numValues = 2;
@@ -56,11 +58,13 @@ public:
     
     static std::string getVersion();
     static std::string getDeviceName();
+    static std::string getDeviceType();
     static int getNumValues();
     static std::string getTypeAtIndex(int index);
     static std::string getNameAtIndex(int index);
     
     bool isActive();
+    std::string getValueByName(std::string name);
     std::string getValueAtIndex(int index);
     
 protected:

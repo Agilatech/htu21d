@@ -1,6 +1,6 @@
 ##Node addon for I2C hardware HTU21D Humidity and Temperature sensor
 
-#####Theoretically, this addon should work on any Linux platform, but has only been tested on BBB
+#####This addon should work on any Linux platform, and has been thoroughly tested on BeagleBone Black
 
 ###Install
 
@@ -13,10 +13,10 @@ node-gyp configure build
 ```
 
 ###Usage
-#####Load the module and create and instance
+#####Load the module and create an instance
 
 ```
-const addon = require('htu21d');
+const addon = require('@agilatech/htu21d');
 
 // create an instance on the I2C bus 2 at address 0x40
 const htu21d = new addon.Htu21d('/dev/i2c-2', 0x40);
@@ -30,7 +30,7 @@ const active = htu21d.deviceActive(); // true if active, false if inactive
 const numVals =  htu21d.deviceNumValues(); // returns the number of paramters sensed
 ```
 
-####Get paramter info and values
+####Get parameter info and values
 The HTU21D Sensor has two parameters, so there are two corresponding indicies.
 ```
 const paramName0 = htu21d.nameAtIndex(0);

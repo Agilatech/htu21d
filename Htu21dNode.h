@@ -25,6 +25,7 @@ public:
     static void Init(v8::Local<v8::Object> exports);
     
     static void getDeviceName(const v8::FunctionCallbackInfo<v8::Value>& args);
+    static void getDeviceType(const v8::FunctionCallbackInfo<v8::Value>& args);
     static void getDeviceVersion(const v8::FunctionCallbackInfo<v8::Value>& args);
     static void getDeviceNumValues (const v8::FunctionCallbackInfo<v8::Value>& args);
     static void getTypeAtIndex (const v8::FunctionCallbackInfo<v8::Value>& args);
@@ -35,7 +36,7 @@ public:
     
 private:
     
-    explicit Htu21dNode(uint32_t bus = 1) : bus_(bus) {}
+    explicit Htu21dNode(std::string devfile = "/dev/i2c-1", uint32_t addr = 0x40) {}
     
     ~Htu21dNode() {}
     

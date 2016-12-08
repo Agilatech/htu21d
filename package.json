@@ -1,6 +1,6 @@
 {
   "name": "@agilatech/htu21d",
-  "version": "0.9.2",
+  "version": "0.9.1",
   "description": "Driver for the HTU21D Sensor",
   "main": "./build/Release/htu21d",
   "gypfile": true,
